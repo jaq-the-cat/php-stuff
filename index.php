@@ -14,6 +14,10 @@ include_once 'db.php';
 </head>
 <body>
     <header>
+        <?php session_start() ?>
+        <?php if ($_SESSION['loggedin'] === true): ?>
+            <small>Logged in as <?= $_SESSION['username']  ?>  <a href="logout.php">Logout</a></small>
+        <?php endif; ?>
         <h1><a href="index.php">CSS is for losers</a></h1>
         <small><a href="register.php">Register</a></small>
         <small><a href="login.php">Login</a></small>
